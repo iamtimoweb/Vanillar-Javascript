@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        .styleClass {
+            display: table-cell;
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="styleClass" onclick="alert('div click handler')">
+        DIV Element
+        <span class="styleClass" onclick="alert('span click handler')">
+            SPAN Element
+            <input type="button" value="click me" onclick="alert('button click handler')">
+        </span>
+    </div>
+    <script>
+        // Event Bubbling: starts with the element that triggered the event and then bubbles up to the containing elements in the hierrachy.
+
+        // Here the event bubbles up from the innermost element to the outermost element in the DOM Hierarchy
+    </script>
+</body>
+
+</html>

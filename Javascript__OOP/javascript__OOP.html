@@ -1,0 +1,45 @@
+<script>
+    // In Javascript, there are two ways of creating an objects:
+    // 1) using the consructor function
+    // 2) Using the literal notation
+
+    // =========================== Using the constructor function to create the employee object ===============
+
+    function Employee(firstname, lastname) {
+
+        // creating the properties
+        this.firstname = firstname;
+        this.lastname = lastname
+
+        // creating the method ie a privileged function
+        this.getFullName = function () {
+            return this.firstname + " " + this.lastname
+        }
+    }
+
+    // creating object
+    let obj = new Employee('Mugabi', 'Timothy')
+    document.write('FirstName: ', obj.firstname + '<br/>')
+    document.write('FirstName: ', obj.lastname + '<br/>')
+    document.write('FullName: ', obj.getFullName() + '<br/><br/>')
+
+
+    // =========================== Using object literal notation to create an object ===============
+
+    let employee = {
+
+        firstname: 'Mugabi',
+        lastname: 'Timothy',
+        getFullName: function () {
+            return this.firstname + " " + this.lastname
+        }
+
+    }
+
+    // creating object
+
+    document.write('FirstName: ', employee.firstname + '<br/>')
+    document.write('FirstName: ', employee.lastname + '<br/>')
+    document.write('FullName: ', employee.getFullName() + '<br/>')
+
+</script>

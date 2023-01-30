@@ -1,0 +1,12 @@
+<script>
+    try {
+        document.write(sayHello())
+    } catch (err) {
+        document.write('Message: ' + err.message + "<br/>")
+        document.write('Description: ' + err.description + "<br/>")
+        document.write('Stack Trace: ' + err.stack + "<br/>")
+    }
+    finally{
+        document.write("This line is guaranteed to execute")
+    }
+</script>

@@ -1,0 +1,31 @@
+<script>
+    // Using the prototype object in javascript : Here no matter how many objects are created, functions are loaded once into memory and allows you to override functions if required.
+
+    function Employee(name) {
+        this.name = name;
+    }
+
+    // using the prototype object
+    Employee.prototype.printName = function () {
+        document.write('The name of the employee is: ', this.name, "<br/>")
+    }
+
+    new Employee('Fred').printName()
+    new Employee('Timothy').printName()
+
+    //=====================================OVERRIDING IN JAVASCRIPT============================================
+    // here we can override the printName() function and it returns the name in capital letters
+    Employee.prototype.printName = function () {
+        document.write('The name of the employee is: ', this.name.toUpperCase(), "<br/>")
+    }
+
+    new Employee('Fred').printName()
+    new Employee('Timothy').printName()
+
+    //===============================OVERRIDING THE BUILT-IN METHODS IN JAVASCRIPT========================
+
+    var alert = function (message) {
+        document.write(message)
+    }
+    window.alert('What is up for now, Did you know you can override the built in javascript methods')
+</script>

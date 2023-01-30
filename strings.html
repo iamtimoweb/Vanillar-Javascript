@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let firstname = 'Mugabi'
+        let lastname = ' Timothy '
+        let middlename = 'Emmanuel '
+
+        // using the plus operator
+        document.writeln('My name is: ', firstname + lastname + middlename)
+
+        document.write('<br/>')
+
+        // using the concat() method
+        document.writeln('My full name is: ', firstname.concat(lastname, middlename))
+
+        // Replace the strings
+        let myString = "Hello Javascript"
+        myString = myString.replace('Javascript', 'World')
+
+        document.write('<br/>')
+
+        document.writeln('This is ', myString)
+
+        // NB: Use the dot operation of the string variable to see the methods and properties
+
+
+        // Substrings in javascript using methods: substring(), substr(), 
+        let sample_string = "Javascript Tutorial"
+
+        document.write('<br/>')
+
+        // The zero-based index number indicating the beginning of the substring.
+        document.write("substring() method " + sample_string.substring(0, 10))
+
+        document.write('<br/>')
+
+        // reverses the parameters if the second parameter is bigger than the first parameter.
+        document.write("substring() method " + sample_string.substring(10, 0))
+
+        document.write('<br/>')
+
+        //=======================substr()==========================================
+        document.write("substr() method " + sample_string.substr(0, 10))
+
+
+    </script>
+</body>
+
+</html>

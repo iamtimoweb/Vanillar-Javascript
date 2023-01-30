@@ -1,0 +1,33 @@
+<script>
+
+    // Object Reflection: Allows us to inspect the meta data of assemblies, modules and types
+    const Employee = function (firstname, lastname, email, gender) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.gender = gender;
+    }
+
+    Employee.prototype.getFullname = function () {
+        return this.firstname + ' ' + this.lastname;
+    }
+
+    Employee.prototype.getEmail = function () {
+        return this.email;
+    }
+    Employee.prototype.getGender = function () {
+        return this.gender;
+    }
+
+    const employee = new Employee('Mugabi', 'Timothy', 'iamtimothy2020@gmail.com', 'Male');
+
+    for (let property in employee) {
+
+        //document.write(property + " : " + employee[property] + "<br/>")
+
+        // Retrieving only the public properties of the Employee object
+        if (typeof employee[property] != "function") {
+            document.write(property + " : " + employee[property] + "<br/>")
+        }
+    }
+</script>

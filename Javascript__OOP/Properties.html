@@ -1,0 +1,36 @@
+<script>
+
+    function Employee(name, age) {
+        var _name = name;
+        var _age = age
+;
+        // Properties for name and age
+
+        //Object on which to add or modify the property. This can be a native JavaScript object (that is, a user-defined object or a built in object) or a DOM object.
+        Object.defineProperty(this, "age", {
+            get: function () {
+                return _age
+            },
+            set: function (value) {
+                if (value < 1 || value > 100) {
+                    
+                    alert("Age cannot be less than 1 or greater than 100")
+
+                } else {
+                    _age = value
+                }
+            }
+        })
+
+        Object.defineProperty(this, "name", {
+            get: function () {
+                return _name
+            },
+        
+        })
+    }
+
+    var emp = new Employee('John', 30)
+    emp.age = 10000
+    document.write('Age= ', emp.age)
+</script>

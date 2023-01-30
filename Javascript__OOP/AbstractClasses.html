@@ -1,0 +1,25 @@
+<script>
+    function Shape() {
+
+        throw new Error('Can not create an instance of abstract class')
+    }
+
+    // creating a draw function inside the shape using the prototype object
+    Shape.prototype.draw = function () {
+        return "Drawing " + this.shapeName;
+    }
+
+    // creating the instance of Shape function but it will throw an error as it is declared abstract
+    // new Shape('circle').draw();
+
+    let CreateShape = function (shapeName) {
+        this.shapeName = shapeName;
+    }
+
+    // inheriting from Shape class and creating its instance without using the new keyword
+    CreateShape.prototype = Object.create(Shape.prototype)
+
+    let obj = new CreateShape('Circle').draw();
+
+    document.write(obj + '<br/>');
+</script>

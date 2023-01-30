@@ -1,0 +1,24 @@
+<script>
+
+    let Employee = function(name){
+        this.name = name;
+
+        this.getEmployeeName=function(){
+            return this.name
+        }
+    }
+
+    let Salary = function(amount){
+        this.amount = amount
+    }
+
+    let empObj = new Employee('James')
+
+    // Inheritance: Use the prototype keyword to create inheritance among the objects
+    Salary.prototype = empObj;
+
+    let salaryObj = new Salary(50000)
+    document.write(`The name of the Employee is: ${salaryObj.getEmployeeName()} and his salary is: ${salaryObj.amount}`)
+
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in Javascript</title>
+</head>
+
+<body>
+    <script>
+        /*
+            A closure is an inner function that has access to constiables of an outer function in addition to its own constiables and global variables. The inner function not only has access to the outer functions variables but also to the outer function's parameters.
+
+            A closure is created by adding a function inside another function
+
+        */
+
+        function addNumbers(firstNumber, secondNumber) {
+
+            const returnValue = 'Result is: ';
+
+            function add() {
+                return returnValue + (firstNumber + secondNumber)
+            }
+            return add();
+        }
+        const result = addNumbers(10, 20)
+        document.write(result)
+    </script>
+</body>
+
+</html>

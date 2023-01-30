@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions in Javascript</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 mt-5">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter a regular expression" id="regExpId" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block form-group" onclick="processString()">Process String</button>
+                <div class="form-group">
+                    <textarea cols="30" rows="4" id="showRegExpId" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function processString() {
+            let inputString = document.getElementById('regExpId').value;
+            console.log(inputString)
+
+            // search for all the numbers in the string entered in the textbox
+            // A variable name or string literal containing the regular expression pattern and flags.
+            // performing a global search for all the numbers in the string
+            let result = inputString.match(/\d+/g);
+            console.log(result)
+
+            // check for if the result is not null
+            if (result != null) {
+                for (var i = 0; i < result.length; i++) {
+                    document.getElementById('showRegExpId').innerHTML += result[i] + "\n";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

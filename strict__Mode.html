@@ -1,0 +1,12 @@
+<script>
+    // "use strict";
+    myString = "This is a string";
+    document.write(myString + "<br/>");
+
+    // forcing strictness only inside the function
+    (function myString() {
+        "use strict"
+        var myString = "This is a string";
+        document.write(myString);
+    })()
+</script>

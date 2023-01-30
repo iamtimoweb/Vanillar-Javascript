@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+
+<body>
+    <script>
+        function addNumbers(firstnumber, secondnumber) {
+            let sum = firstnumber + secondnumber;
+            return sum
+        }
+        result = addNumbers(20, 30);
+        //document.write(result);
+
+        // In Javascript the braces don't create scope
+        var num = 100
+        if (num > 10) {
+            var otherNumber = num
+        }
+        alert(otherNumber);
+    </script>
+</body>
+
+</html>

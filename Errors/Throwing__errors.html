@@ -1,0 +1,25 @@
+<script>
+
+    let numerator = Number(prompt('Enter Numerator', ''))
+    let denominator = Number(prompt('Enter Denominator', ''))
+
+    try {
+
+        if (denominator == 0) {
+            throw {
+                error: 'Divide by zero error',
+                message: 'Denominator cannot be zero'
+            }
+
+        } else {
+            document.write('Result: ', numerator / denominator, '<br/>')
+        }
+
+    } catch (err) {
+        document.write("Error", err.error, '<br/>')
+        document.write("Message", err.message, '<br/>')
+    }
+    finally {
+        document.write('This line is guaranteed to execute')
+    }
+</script>

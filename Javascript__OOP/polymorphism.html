@@ -1,0 +1,33 @@
+<script>
+    // polymorphism
+
+    const Shape = function(){}
+
+    Shape.prototype.draw = function(){
+        return "I am a generic shape"
+    }
+
+    const Rectangle = function(){}
+    Rectangle.prototype = Object.create(Shape.prototype)
+    // overidding the draw method inside the Shape constructor
+    Rectangle.prototype.draw = function(){
+        return 'I am a rectangle'
+    }
+
+    const Square = function(){}
+
+    Square.prototype = Object.create(Shape.prototype)
+    // overidding the draw method inside the Shape constructor
+    Square.prototype.draw = function(){
+        return 'I am a square'
+    }
+
+    const Triangle = function(){}
+    Triangle.prototype = Object.create(Shape.prototype)
+    
+
+    let shapes = [new Shape(), new Rectangle(), new Square(), new Triangle()]
+
+    shapes.forEach(shape=>document.write(shape.draw(), '<br/>'))
+
+</script>

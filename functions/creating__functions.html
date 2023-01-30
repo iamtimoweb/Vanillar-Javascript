@@ -1,0 +1,29 @@
+<script>
+    let result;
+    // ================================ Named function===========================================
+
+    function printName(name) {
+        return 'My name is: ', name
+    }
+
+    result = printName('Timothy');
+    document.write(result + '<br/>');
+
+
+    // ================================ Unanimous function===========================================
+
+    result = function (name) {
+        return 'My name is: ', name
+    }
+
+    document.write(result('Mubiru Joseph') + '<br/>');
+
+
+    // ================================ Self Invoking function==========================================
+
+    result = (function displayName(name) {
+        return 'My name is: ', name
+    })('Kakinda James')
+
+    document.write(result + '<br/>');
+</script>

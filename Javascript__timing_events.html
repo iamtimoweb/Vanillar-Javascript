@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Timing Functions</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 my-5">
+                <span id="showCurrentDateTime" class="d-block mb-4 p-5 bg-dark text-white"></span>
+
+                <button class="btn btn-primary" onclick="startClock()">Start Clock</button>
+                <button class="btn btn-danger" onclick="stopClock()">Stop Clock</button>
+            </div>
+            <div class="col-12">
+
+                <div class="form-group">
+                    <input type="text" name="countDown" id="countDown" class="form-control" value="10">
+                </div>
+
+                <button class="btn btn-primary" onclick="startTimer(countDown)">Start Timer</button>
+                <button class="btn btn-danger" onclick="stopTimer()">Stop Timer</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // The global window object has two methods that allow us execute a piece of javascript code at specified time interval.
+
+    // =========================setInterval(func, delay) method: =======================================
+    //Executes a specified function repeatedly at a specifed time interval. This method has 2 parameters. The func parameter specifies the name of the function to execute. The delay parameter specifies the time in milliseconds to wait before calling the specified function
+
+    // =========================setTimeout(func, delay) method: =======================================
+    //Executes a specified function after waitng a specified number of milliseconds. This method has 2 parameters. The func parameter specifies the name of the function to execute. The delay parameter specifies the time in milliseconds to wait before calling the specified function. The actual wait time (delay) may be long
+
+    let intervalId;
+
+    function startClock() {
+        intervalId = setInterval(getCurrentDateTime, 1000);
+    }
+    function stopClock() {
+        clearInterval(intervalId)
+    }
+    function getCurrentDateTime() {
+        document.getElementById('showCurrentDateTime').innerText = new Date();
+    };
+    getCurrentDateTime();
+
+
+    // ===========================Time Interval======================================
+    function startTimer(controlId) {
+        let control = document.getElementById('countDown')
+        let seconds = control.value;
+        seconds = seconds - 1;
+
+        if(seconds == 0){
+            control.value = "Done"
+            return
+        }else{
+            control.value = seconds
+        }
+
+        intervalId = setTimeout(()=>startTimer(countDown), 1000)
+    }
+
+    function stopTimer(){
+        clearTimeout(intervalId)
+    }
+
+</script>

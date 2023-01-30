@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener and removeEventListener</title>
+</head>
+<body>
+    <input type="button" value="Click Me" id="btnClickMe">
+    <input type="button" value="Remove Event Listener" onclick="removeHandlers()">
+
+    <script>
+        btnClickMe.addEventListener('mouseover', changeColorOnMouseOver)
+        btnClickMe.addEventListener('mouseout', changeColorOnMouseOut)
+
+        function changeColorOnMouseOver(){
+            this.style.backgroundColor = 'red'
+            this.style.color = 'yellow'
+        }
+        function changeColorOnMouseOut(){
+            this.style.backgroundColor = 'black'
+            this.style.color = 'white'
+        }
+
+        function removeHandlers(){
+            btnClickMe.removeEventListener('mouseover', changeColorOnMouseOver)
+            btnClickMe.removeEventListener('mouseout', changeColorOnMouseOut)
+        }
+    </script>
+</body>
+</html>

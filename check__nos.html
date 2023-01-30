@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check whether a number is even or odd</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h3>Please enter number of your choice.</h3>
+                <form class="form-inline">
+                    <div class="form-group mx-sm-2">
+                        <label for="number" class="sr-only">Number</label>
+                        <input type="text" class="form-control" id="number" placeholder="Enter a number...">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="checkNo()">Check Number</button>
+                </form>
+                <label id="lblMsg"></label>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkNo() {
+            let numValue = document.getElementById('number').value
+            // check whether the number is odd or even
+            if (numValue % 2 == 0) {
+                document.getElementById('lblMsg').textContent = `The number ${numValue} is an even number`;
+            } else {
+                document.getElementById('lblMsg').textContent = `The number ${numValue} is an odd number`;
+            }
+        }
+    </script>
+</body>
+
+</html>

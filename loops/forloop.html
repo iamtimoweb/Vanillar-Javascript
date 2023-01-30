@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forloop </title>
+</head>
+
+<body>
+    <script>
+        // printing the even numbers less than 10
+        // Note all the three parameters in the forloop are optional
+        let targetNumber = Number(prompt('Enter a number', ''))
+        let start = 0;
+        for (; ;) {
+            if (start > targetNumber) {
+                break;
+            }
+            document.write(start + "<br/>")
+            start = start + 2;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While loop</title>
+</head>
+
+<body>
+    <script>
+        let userChoice = ""
+        do {
+            // while loop
+            let targetNumber = Number(prompt('please enter a target number', ''))
+
+            let start = 0
+
+            while (start <= targetNumber) {
+                document.write(start + '<br/>')
+                start = start + 2;
+            }
+
+            // prompt the user again to enter a target number
+            do {
+                userChoice = prompt('Do you want to continue - Yes or No').toUpperCase();
+                if (userChoice != 'YES' && userChoice != 'NO') {
+                    alert('Invalid Choice. Please say Yes or No')
+                }
+
+            } while (userChoice != 'YES' && userChoice != 'NO')
+        } while (userChoice == 'YES')
+    </script>
+</body>
+
+</html>

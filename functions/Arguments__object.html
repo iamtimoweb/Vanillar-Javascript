@@ -1,0 +1,36 @@
+<script>
+
+    /*
+    * 
+    *
+    */
+
+    function printArgument() {
+        document.write('Arguments Count: ' + arguments.length + "<br/>")
+
+        // printing the argument
+        for (let i = 0; i < arguments.length; i++) {
+            document.write("Argument: " + i + " = " + arguments[i] + "<br/>")
+        }
+        document.write("<br/>")
+    }
+
+    printArgument();
+    printArgument("A", "B");
+    printArgument(10, 20, 30)
+
+    // Note: The argument object is only available inside the function body, Though you can index the argument object like an array, it is not an array, it doesn't have any array properties except length. However you can convert an argument object into an array.
+
+    document.write("<br/>")
+    document.write("<br/>")
+
+    function printNumbers() {
+        // converting an argument object into an array
+        const argsArray = Array.prototype.slice.call(arguments);
+
+        argsArray.sort();
+        document.write(argsArray)
+    }
+
+    printNumbers(80, 10, 25, 35, 16, 50, 12)
+</script>

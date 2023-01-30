@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing in Javascript</title>
+
+    <style>
+        .divStyle {
+            display: table-cell;
+            border: 10px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="divStyle" id="DIV1">
+        DIV 1
+        <div class="divStyle" id="DIV2">
+            DIV 2
+            <div class="divStyle" id="DIV3">
+                DIV 3
+            </div>
+        </div>
+    </div>
+    <script>
+        // With Event Capturing, the event gets captured from the outermost element to the innermost element.
+        // In real world, event capturing is rearl used. IE8 and earlier versions don't support addEventListener, therefore event capturing is also not supported
+
+        // Note: To set event capturing, enable the third parameter of the addEventListener(event, function, true) to true
+
+        let divElements = document.getElementsByTagName('div')
+
+        for (let i = 0; i < divElements.length; i++) {
+            divElements[i].addEventListener('click',  function () {
+                alert(this.getAttribute('id') + ' click event handled' )
+            }, true)
+        }
+    </script>
+</body>
+
+</html>

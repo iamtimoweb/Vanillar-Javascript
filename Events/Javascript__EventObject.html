@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event Object</title>
+</head>
+
+<body>
+    <button id="btn" onclick="getEventDetails(event)">Click Me</button>
+    <div id="resultDiv"></div>
+    <script>
+        function getEventDetails(event) {
+            let eventDetails = "Event Name = " + event.type + "<br/>" + "Target Type = " + event.target.type + "<br/>" + "Target Tagname: " + event.target.tagName
+
+            document.getElementById('resultDiv').innerHTML = eventDetails;
+
+            console.log(event)
+        }
+    </script>
+</body>
+
+</html>

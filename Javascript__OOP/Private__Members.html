@@ -1,0 +1,41 @@
+<script>
+
+    function Student(firstname, lastname) {
+
+        // public fields
+        this.firstname = firstname;
+        this.lastname = lastname;
+
+        // private fields: These are declared using the var key word
+        var privateFullName;
+
+        // Private function:  These can be declared using the var keyword or creating a function inside a function.
+        var privateGetFullName = function () {
+            privateFullName = firstname + " " + lastname;
+            return privateFullName
+        }
+
+        // Privilleged function: Is declared using this keyword
+        this.privillegedGetFullName = function () {
+            return privateGetFullName();
+        }
+
+        // Public function: Declared using object's prototype property
+        Student.prototype.publicGetFullName = function () {
+            return this.privillegedGetFullName();
+        }
+    }
+
+    obj = new Student('Kakembo', 'John');
+    document.write('FullName: ', obj.publicGetFullName() + "<br/>")
+    document.write('FullName: ', obj.privillegedGetFullName() + "<br/>")
+
+    // can be accessed outside a function
+    document.write('FullName: ', obj.privateGetFullName() + "<br/>")
+    document.write('FullName: ', obj.privateFullName + "<br/>")
+
+
+
+
+
+</script>
